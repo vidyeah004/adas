@@ -1,0 +1,7 @@
+[build]
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "gunicorn -w 2 -b 0.0.0.0:5000 --timeout 120 --access-logfile - --error-logfile - backend_api:app"
+
+restartPolicyType = "on_failure"
